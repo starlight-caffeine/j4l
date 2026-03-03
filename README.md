@@ -11,7 +11,7 @@
 # LLJE: Lia's 1337 Java Experiments
 
 Usage:
-- Clone this repository to a folder
+- Clone this repository to a folder (VSCode can do that from the 'Welcome' page > 'Clone Git Repository')
 
 On *nix:
 - Compile with <tt>$ javac Main.java</tt>
