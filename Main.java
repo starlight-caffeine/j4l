@@ -1,0 +1,36 @@
+import FizzBuzz.FizzBuzz;
+
+static String header = """
+    ██▓     ██▓ ▄▄▄        ██████     ██▓    ▓█████ ▓█████▄▄▄█████▓    ▄▄▄██▀▀▀▄▄▄    ██▒   █▓ ▄▄▄
+    ▓██▒    ▓██▒▒████▄    ▒██    ▒    ▓██▒    ▓█   ▀ ▓█   ▀▓  ██▒ ▓▒      ▒██  ▒████▄ ▓██░   █▒▒████▄
+    ▒██░    ▒██▒▒██  ▀█▄  ░ ▓██▄      ▒██░    ▒███   ▒███  ▒ ▓██░ ▒░      ░██  ▒██  ▀█▄▓██  █▒░▒██  ▀█▄
+    ▒██░    ░██░░██▄▄▄▄██   ▒   ██▒   ▒██░    ▒▓█  ▄ ▒▓█  ▄░ ▓██▓ ░    ▓██▄██▓ ░██▄▄▄▄██▒██ █░░░██▄▄▄▄██
+    ░██████▒░██░ ▓█   ▓██▒▒██████▒▒   ░██████▒░▒████▒░▒████▒ ▒██▒ ░     ▓███▒   ▓█   ▓██▒▒▀█░   ▓█   ▓██▒
+    ░ ▒░▓  ░░▓   ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░   ░ ▒░▓  ░░░ ▒░ ░░░ ▒░ ░ ▒ ░░       ▒▓▒▒░   ▒▒   ▓▒█░░ ▐░   ▒▒   ▓▒█░
+    ░ ░ ▒  ░ ▒ ░  ▒   ▒▒ ░░ ░▒  ░ ░   ░ ░ ▒  ░ ░ ░  ░ ░ ░  ░   ░        ▒ ░▒░    ▒   ▒▒ ░░ ░░    ▒   ▒▒ ░
+     ░ ░    ▒ ░  ░   ▒   ░  ░  ░       ░ ░      ░      ░    ░          ░ ░ ░    ░   ▒     ░░    ░   ▒
+       ░  ░ ░        ░  ░      ░         ░  ░   ░  ░   ░  ░            ░   ░        ░  ░   ░        ░  ░
+        """;
+
+interface AnsiColor {
+    String RESET = "\u001B[0m";
+    String RED_FG = "\u001b[31m";
+    String CYAN_FG = "\u001b[36m";
+}
+
+static String colorize(String arg, String color) {
+    return color + arg + AnsiColor.RESET;
+}
+
+public static void main(String[] argv) {
+    System.out.println(colorize(header, AnsiColor.RED_FG));
+    System.out.println(
+        colorize(
+            "|------------------------------------- Running Projects... ---------------------------------------|",
+            AnsiColor.CYAN_FG
+        )
+    );
+    System.out.print(AnsiColor.CYAN_FG);
+    FizzBuzz.printFizzBuzz();
+    System.out.print(AnsiColor.RESET);
+}
